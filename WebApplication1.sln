@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{17208EA1-02C9-4E5A-8E65-592C8F7758F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{17208EA1-02C9-4E5A-8E65-592C8F7758F6}"
 	ProjectSection(ProjectDependencies) = postProject
 		{A2CD98CD-479D-49D3-8181-105EB770A88C} = {A2CD98CD-479D-49D3-8181-105EB770A88C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1.DAL", "WebApplication1.DAL\WebApplication1.DAL.csproj", "{A2CD98CD-479D-49D3-8181-105EB770A88C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1.DAL", "WebApplication1.DAL\WebApplication1.DAL.csproj", "{A2CD98CD-479D-49D3-8181-105EB770A88C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1.Tests", "WebApplication1.Tests\WebApplication1.Tests.csproj", "{232F69FB-0855-49A9-8B02-A100D6303C41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{A2CD98CD-479D-49D3-8181-105EB770A88C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2CD98CD-479D-49D3-8181-105EB770A88C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2CD98CD-479D-49D3-8181-105EB770A88C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{232F69FB-0855-49A9-8B02-A100D6303C41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{232F69FB-0855-49A9-8B02-A100D6303C41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{232F69FB-0855-49A9-8B02-A100D6303C41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{232F69FB-0855-49A9-8B02-A100D6303C41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

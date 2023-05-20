@@ -45,6 +45,12 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LogoutPath = $"/Identity/Account/Logout";
 });
 
+builder.Host.ConfigureLogging(logging =>
+{
+    logging.ClearProviders();
+    logging.AddFilter("Microsoft", LogLevel.None);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
