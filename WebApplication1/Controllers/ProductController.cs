@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.DAL.Data;
 using WebApplication1.DAL.Entities;
+using WebApplication1.Extensions;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -14,11 +15,14 @@ namespace WebApplication1.Controllers
         public List<Dish> _dishes;
         List<DishGroup> _dishGroups;
         int _pageSize;
+
         public ProductController()
         {
             _pageSize = 3;
             SetupData();
         }
+        [Route("Catalog")]
+        [Route("Catalog/Page_{pageNo}")]
         public IActionResult Index(int? group, int pageNo = 1)
         {
 
@@ -30,7 +34,12 @@ namespace WebApplication1.Controllers
             //var currentGroup = group.HasValue ? group.Value : 0;
             //ViewData["CurrentGroup"] = currentGroup;
             ViewData["CurrentGroup"] = group ?? 0;
-            return View(ListViewModel<Dish>.GetModel(dishesFiltered, pageNo, _pageSize));
+            var model = ListViewModel<Dish>.GetModel(dishesFiltered, pageNo,_pageSize);
+            if (Request.IsAjaxRequest())
+                return PartialView("_listpartial", model);
+            else
+                return View(model);
+
         }
         /// <summary>
         /// Инициализация списков
